@@ -1,0 +1,1 @@
+{0: 'Background Noise', 1: 'HAUSA ACCENT', 2: 'IGBO ACCENT', 3: 'YORUBA ACCENT'}

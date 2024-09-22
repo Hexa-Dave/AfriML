@@ -1,0 +1,6 @@
+fastai==2.7.11
+tensorflow==2.13.1
+django
+opencv-python
+scikit-learn
+mediapipe
