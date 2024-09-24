@@ -1,28 +1,11 @@
 import os
 from .settings import *
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+from .settings import BASE_DIR
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False
 SECRET_KEY = os.environ['MY_SECRET_KEY']
-
-
-# Application definition
-
-INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    "corsheaders",
-    "APi_App",
-]
-
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -48,7 +31,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     }
 }
 
@@ -71,4 +54,4 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = BASE_DIR / "staticfiles"
