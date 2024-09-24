@@ -8,6 +8,12 @@ from .settings import BASE_DIR
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+STATIC_URL = "static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False
@@ -60,4 +66,4 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static") 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
