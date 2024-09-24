@@ -1,23 +1,8 @@
 import os
-import os.path
-from pathlib import Path
 from .settings import *
-from .settings import BASE_DIR
+from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-STATIC_URL = "/Backend/static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "/Backend/static")]
-
-
-# Specify the directory where Django will collect static files during production
-STATIC_ROOT = os.path.join(BASE_DIR, "/Backend/static")
-
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
@@ -53,6 +38,13 @@ STORAGES = {
 }
 
 
+# Static files settings for production
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "Backend/staticfiles")  # Ensure static files are collected here for production
+
+# If you have custom static files in development, this is where they are located
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "Backend/static")]
+
 
 
 # Database
@@ -70,4 +62,3 @@ DATABASES = {
         "PASSWORD": CONNECTION_STR['password'],
     }
 }
-
