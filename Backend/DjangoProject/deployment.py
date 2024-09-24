@@ -1,4 +1,5 @@
 import os
+import os.path
 from .settings import *
 from pathlib import Path
 
@@ -39,8 +40,8 @@ STORAGES = {
 
 
 # Static files settings for production
-STATIC_URL = "Backend/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "Backend/static")  # Ensure static files are collected here for production
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "Backend/staticfiles")  # Ensure static files are collected here for production
 
 # If you have custom static files in development, this is where they are located
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "Backend/static")]
