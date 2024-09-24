@@ -11,12 +11,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "static/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "Backend/static")]
+STATIC_URL = "/Backend/static/"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "/Backend/static")]
 
 
 # Specify the directory where Django will collect static files during production
-STATIC_ROOT = os.path.join(BASE_DIR, "Backend/staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "/Backend/static")
 
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
