@@ -38,7 +38,13 @@ jobs:
         run: |
           cd Backend
           mkdir -p staticfiles
-          python manage.py collectstatic --noinput
+          python manage.py collectstatic --noinput --verbosity 2
+
+      - name: Run Django tests
+        run: |
+          cd Backend
+          python manage.py test
+
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
