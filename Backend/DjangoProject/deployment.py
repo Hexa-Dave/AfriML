@@ -4,7 +4,6 @@ from .settings import *
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(f"Base directory is: {BASE_DIR}")
 
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
@@ -42,10 +41,10 @@ STORAGES = {
 
 # Static files settings for production
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')  # Ensure static files are collected here for production
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')  # Ensure static files are collected here for production
 
 # If you have custom static files in development, this is where they are located
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 
 
