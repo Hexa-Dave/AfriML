@@ -7,3 +7,6 @@ mediapipe
 psycopg2
 whitenoise
 django-cors-headers
+librosa
+transformers
+datasets
