@@ -24,9 +24,9 @@ MIDDLEWARE = [
 
 
 
-#CORS_ALLOWED_ORIGINS = [
- #   "https://afrimlfront.z1.web.core.windows.net",
-#]
+CORS_ALLOWED_ORIGINS = [
+   "https://ashy-wave-02234e410.5.azurestaticapps.net",
+]
 
 
 STORAGES = {
