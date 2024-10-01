@@ -52,14 +52,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 CONNECTION = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
-CONNECTION_STR = {pair.split('=')[0]:pair.split('=')[1] for pair in CONNECTION.split(' ')}
+CONNECTION_STR = {pair.split('=')[0].strip(): pair.split('=')[1].strip() for pair in CONNECTION.split(';') if '=' in pair}
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": CONNECTION_STR.get('dbname'),
-        "HOST": CONNECTION_STR.get('host'),
-        "USER": CONNECTION_STR.get('user'),
-        "PASSWORD": CONNECTION_STR.get('password'),
+        "NAME": CONNECTION_STR.get('Database'),
+        "HOST": CONNECTION_STR.get('Server'),
+        "USER": CONNECTION_STR.get('User'),
+        "PASSWORD": CONNECTION_STR.get('Password'),
+        "PORT": "5432",  # Default PostgreSQL port
     }
 }
+
