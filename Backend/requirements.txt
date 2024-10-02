@@ -6,4 +6,3 @@ scikit-learn
 mediapipe
 psycopg2
 whitenoise
-django-cors-headers
