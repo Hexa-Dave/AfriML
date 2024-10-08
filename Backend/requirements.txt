@@ -1,5 +1,5 @@
 fastai==2.7.11
-tensorflow==2.13.1
+tensorflow==2.12
 django
 opencv-python
 scikit-learn
