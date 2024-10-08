@@ -99,9 +99,9 @@ const Image = () => {
       }
       setError("");
       setIsLoading(true);
-      const createUrl = "http://127.0.0.1:8000/create_classes_api/";
-      const uploadUrl = "http://127.0.0.1:8000/upload_data_api/";
-      const trainUrl = "http://127.0.0.1:8000/process/"; 
+      const createUrl = "https://ashy-wave-02234e410.5.azurestaticapps.net/create_classes_api/";
+      const uploadUrl = "https://ashy-wave-02234e410.5.azurestaticapps.net/upload_data_api/";
+      const trainUrl = "https://ashy-wave-02234e410.5.azurestaticapps.net/process/"; 
 
       const responses = [];
 
